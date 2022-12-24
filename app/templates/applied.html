@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+
+{% block title %}My Ticket{% endblock %}
+{% block container %}
+    <div class="row">
+        <!-- MAIN CONTENT BEGINS -->
+        <div class="col-md-12">
+            <div id="primary" class="content-area">
+                <main id="main" class="site-main" role="main">
+                    <div class="wowitemboxlist">
+                        {% for activity in applied_activities %}
+                            <div class="wowitembox">
+                                <div class="wowitemboxinner">
+                                    <div class="imagearea">
+                                        <img width="555" height="370"
+                                             src="static/img/qatar.png"
+                                             class="attachment-post-thumbnail wp-post-image" alt="Game Pic"/>
+                                        <div class="caption">
+                                            <div class="blur">
+                                            </div>
+                                            <div class="caption-text">
+                                                <div class="captionbuttons">
+                                                    <a href="{{ url_for('detail',id=activity.id) }}"
+                                                       class="captiondetails"><i class="fa fa-link"></i>
+                                                        Detail...</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="notesarea">
+                                        <a href="productsingle.html">
+                                            <h2>{{ activity.activity_name }}</h2>
+                                        </a>
+                                        <div class="description">
+                                            <p>
+                                                <span class="description">Time：{{ activity.time }}</span>
+                                            </p>
+                                        </div>
+                                        <div class="notesbottom">
+                                            <div class="price fleft">
+                                                Status：Purchased
+                                            </div>
+                                            <div class="cart fright">
+                                                <button onclick="refund({{ activity.id }})"
+                                                   class="edd-add-to-cart">
+                                                    <span class="edd-add-to-cart-label">Refine</span>
+                                                </button>
+                                            </div>
+                                            <div class="clearfix">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </main>
+            </div>
+        </div>
+        <!-- MAIN CONTENT ENDS -->
+
+
+    </div>
+{% endblock %}
+{% block js_ext %}
+    <script>
+        function refund(id){
+            console.log(id);
+            $.ajax({
+                url: '{{ url_for('refund') }}',
+                type: 'POST',
+                data: JSON.stringify(id),
+                contentType: "application/json; charset=UTF-8",
+                success: function (data){
+                    console.log(data);
+                    alert(data.message);
+                    location.reload();
+                },
+                error: function (data){
+                    alert('Refine Failed！')
+                }
+            })
+        }
+    </script>
+{% endblock %}

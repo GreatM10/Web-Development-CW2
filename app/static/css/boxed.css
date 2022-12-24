@@ -1,0 +1,10 @@
+	body, #wow-menu.navbar-default {width: 90%;	margin: 0px auto;}
+	body {
+		background-color:#333; 
+		background-image:url(http://www.themepush.com/demo-kailo/wp-content/uploads/sites/6/2015/03/green_nature_dual_monitor-other.jpg);
+		background-repeat:no-repeat;
+		background-position:top center;
+		background-size:cover;
+		background-attachment:fixed;
+	}
+   .boxedlayout {background-color:#fff;}

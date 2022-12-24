@@ -1,0 +1,341 @@
+2022-12-08 19:10:25,523 - werkzeug - WARNING -  * Debugger is active!
+2022-12-08 21:11:54,747 - werkzeug - WARNING -  * Debugger is active!
+2022-12-08 22:32:42,691 - werkzeug - WARNING -  * Debugger is active!
+2022-12-08 22:35:43,689 - werkzeug - WARNING -  * Debugger is active!
+2022-12-08 22:47:20,814 - werkzeug - WARNING -  * Debugger is active!
+2022-12-08 23:04:21,350 - werkzeug - WARNING -  * Debugger is active!
+2022-12-08 23:06:33,441 - werkzeug - WARNING -  * Debugger is active!
+2022-12-08 23:07:32,121 - werkzeug - WARNING -  * Debugger is active!
+2022-12-08 23:08:45,695 - werkzeug - WARNING -  * Debugger is active!
+2022-12-08 23:09:14,515 - werkzeug - WARNING -  * Debugger is active!
+2022-12-08 23:09:35,384 - werkzeug - WARNING -  * Debugger is active!
+2022-12-08 23:10:47,856 - werkzeug - WARNING -  * Debugger is active!
+2022-12-08 23:13:44,928 - werkzeug - WARNING -  * Debugger is active!
+2022-12-08 23:15:56,065 - werkzeug - WARNING -  * Debugger is active!
+2022-12-08 23:19:18,238 - werkzeug - WARNING -  * Debugger is active!
+2022-12-08 23:19:30,310 - werkzeug - WARNING -  * Debugger is active!
+2022-12-08 23:19:52,875 - werkzeug - WARNING -  * Debugger is active!
+2022-12-08 23:31:22,335 - werkzeug - WARNING -  * Debugger is active!
+2022-12-08 23:36:33,400 - werkzeug - WARNING -  * Debugger is active!
+2022-12-08 23:38:17,266 - werkzeug - WARNING -  * Debugger is active!
+2022-12-09 17:51:32,304 - werkzeug - WARNING -  * Debugger is active!
+2022-12-09 18:04:52,870 - werkzeug - WARNING -  * Debugger is active!
+2022-12-09 18:05:20,259 - werkzeug - WARNING -  * Debugger is active!
+2022-12-09 18:07:28,138 - werkzeug - WARNING -  * Debugger is active!
+2022-12-09 18:08:11,600 - werkzeug - WARNING -  * Debugger is active!
+2022-12-09 18:11:12,277 - werkzeug - WARNING -  * Debugger is active!
+2022-12-09 18:11:34,958 - werkzeug - WARNING -  * Debugger is active!
+2022-12-09 18:12:05,346 - werkzeug - WARNING -  * Debugger is active!
+2022-12-09 18:13:28,156 - werkzeug - WARNING -  * Debugger is active!
+2022-12-09 21:19:52,348 - app - ERROR - Exception on / [GET]
+Traceback (most recent call last):
+  File "C:\Users\Chengyikang\PycharmProjects\world_cup_ticket\venv\lib\site-packages\flask\app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Chengyikang\PycharmProjects\world_cup_ticket\venv\lib\site-packages\flask\app.py", line 1822, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Chengyikang\PycharmProjects\world_cup_ticket\venv\lib\site-packages\flask\app.py", line 1820, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Chengyikang\PycharmProjects\world_cup_ticket\venv\lib\site-packages\flask\app.py", line 1796, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "C:\Users\Chengyikang\PycharmProjects\world_cup_ticket\app\views.py", line 14, in index
+    return render_template('index.html', new_activities=new_activities)
+  File "C:\Users\Chengyikang\PycharmProjects\world_cup_ticket\venv\lib\site-packages\flask\templating.py", line 147, in render_template
+    return _render(app, template, context)
+  File "C:\Users\Chengyikang\PycharmProjects\world_cup_ticket\venv\lib\site-packages\flask\templating.py", line 130, in _render
+    rv = template.render(context)
+  File "C:\Users\Chengyikang\PycharmProjects\world_cup_ticket\venv\lib\site-packages\jinja2\environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "C:\Users\Chengyikang\PycharmProjects\world_cup_ticket\venv\lib\site-packages\jinja2\environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "C:\Users\Chengyikang\PycharmProjects\world_cup_ticket\app\templates\index.html", line 1, in top-level template code
+    {% extends 'base.html' %}
+  File "C:\Users\Chengyikang\PycharmProjects\world_cup_ticket\app\templates\base.html", line 53, in top-level template code
+    {% block content %}
+  File "C:\Users\Chengyikang\PycharmProjects\world_cup_ticket\app\templates\index.html", line 21, in block 'content'
+    {% block container %}
+  File "C:\Users\Chengyikang\PycharmProjects\world_cup_ticket\app\templates\index.html", line 36, in block 'container'
+    {% for activity in new_activities %}
+  File "C:\Users\Chengyikang\PycharmProjects\world_cup_ticket\venv\lib\site-packages\sqlalchemy\orm\query.py", line 2900, in __iter__
+    result = self._iter()
+  File "C:\Users\Chengyikang\PycharmProjects\world_cup_ticket\venv\lib\site-packages\sqlalchemy\orm\query.py", line 2915, in _iter
+    result = self.session.execute(
+  File "C:\Users\Chengyikang\PycharmProjects\world_cup_ticket\venv\lib\site-packages\sqlalchemy\orm\session.py", line 1713, in execute
+    conn = self._connection_for_bind(bind)
+  File "C:\Users\Chengyikang\PycharmProjects\world_cup_ticket\venv\lib\site-packages\sqlalchemy\orm\session.py", line 1552, in _connection_for_bind
+    return self._transaction._connection_for_bind(
+  File "C:\Users\Chengyikang\PycharmProjects\world_cup_ticket\venv\lib\site-packages\sqlalchemy\orm\session.py", line 747, in _connection_for_bind
+    conn = bind.connect()
+  File "C:\Users\Chengyikang\PycharmProjects\world_cup_ticket\venv\lib\site-packages\sqlalchemy\engine\base.py", line 3315, in connect
+    return self._connection_cls(self, close_with_result=close_with_result)
+  File "C:\Users\Chengyikang\PycharmProjects\world_cup_ticket\venv\lib\site-packages\sqlalchemy\engine\base.py", line 96, in __init__
+    else engine.raw_connection()
+  File "C:\Users\Chengyikang\PycharmProjects\world_cup_ticket\venv\lib\site-packages\sqlalchemy\engine\base.py", line 3394, in raw_connection
+    return self._wrap_pool_connect(self.pool.connect, _connection)
+  File "C:\Users\Chengyikang\PycharmProjects\world_cup_ticket\venv\lib\site-packages\sqlalchemy\engine\base.py", line 3361, in _wrap_pool_connect
+    return fn()
+  File "C:\Users\Chengyikang\PycharmProjects\world_cup_ticket\venv\lib\site-packages\sqlalchemy\pool\base.py", line 325, in connect
+    return _ConnectionFairy._checkout(self)
+  File "C:\Users\Chengyikang\PycharmProjects\world_cup_ticket\venv\lib\site-packages\sqlalchemy\pool\base.py", line 888, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "C:\Users\Chengyikang\PycharmProjects\world_cup_ticket\venv\lib\site-packages\sqlalchemy\pool\base.py", line 491, in checkout
+    rec = pool._do_get()
+  File "C:\Users\Chengyikang\PycharmProjects\world_cup_ticket\venv\lib\site-packages\sqlalchemy\pool\impl.py", line 146, in _do_get
+    self._dec_overflow()
+  File "C:\Users\Chengyikang\PycharmProjects\world_cup_ticket\venv\lib\site-packages\sqlalchemy\util\langhelpers.py", line 70, in __exit__
+    compat.raise_(
+  File "C:\Users\Chengyikang\PycharmProjects\world_cup_ticket\venv\lib\site-packages\sqlalchemy\util\compat.py", line 210, in raise_
+    raise exception
+  File "C:\Users\Chengyikang\PycharmProjects\world_cup_ticket\venv\lib\site-packages\sqlalchemy\pool\impl.py", line 143, in _do_get
+    return self._create_connection()
+  File "C:\Users\Chengyikang\PycharmProjects\world_cup_ticket\venv\lib\site-packages\sqlalchemy\pool\base.py", line 271, in _create_connection
+    return _ConnectionRecord(self)
+  File "C:\Users\Chengyikang\PycharmProjects\world_cup_ticket\venv\lib\site-packages\sqlalchemy\pool\base.py", line 386, in __init__
+    self.__connect()
+  File "C:\Users\Chengyikang\PycharmProjects\world_cup_ticket\venv\lib\site-packages\sqlalchemy\pool\base.py", line 685, in __connect
+    pool.logger.debug("Error on connect(): %s", e)
+  File "C:\Users\Chengyikang\PycharmProjects\world_cup_ticket\venv\lib\site-packages\sqlalchemy\util\langhelpers.py", line 70, in __exit__
+    compat.raise_(
+  File "C:\Users\Chengyikang\PycharmProjects\world_cup_ticket\venv\lib\site-packages\sqlalchemy\util\compat.py", line 210, in raise_
+    raise exception
+  File "C:\Users\Chengyikang\PycharmProjects\world_cup_ticket\venv\lib\site-packages\sqlalchemy\pool\base.py", line 680, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+  File "C:\Users\Chengyikang\PycharmProjects\world_cup_ticket\venv\lib\site-packages\sqlalchemy\engine\create.py", line 578, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "C:\Users\Chengyikang\PycharmProjects\world_cup_ticket\venv\lib\site-packages\sqlalchemy\engine\default.py", line 598, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "C:\Users\Chengyikang\PycharmProjects\world_cup_ticket\venv\lib\site-packages\pymysql\connections.py", line 353, in __init__
+    self.connect()
+  File "C:\Users\Chengyikang\PycharmProjects\world_cup_ticket\venv\lib\site-packages\pymysql\connections.py", line 633, in connect
+    self._request_authentication()
+  File "C:\Users\Chengyikang\PycharmProjects\world_cup_ticket\venv\lib\site-packages\pymysql\connections.py", line 932, in _request_authentication
+    auth_packet = _auth.caching_sha2_password_auth(self, auth_packet)
+  File "C:\Users\Chengyikang\PycharmProjects\world_cup_ticket\venv\lib\site-packages\pymysql\_auth.py", line 265, in caching_sha2_password_auth
+    data = sha2_rsa_encrypt(conn.password, conn.salt, conn.server_public_key)
+  File "C:\Users\Chengyikang\PycharmProjects\world_cup_ticket\venv\lib\site-packages\pymysql\_auth.py", line 143, in sha2_rsa_encrypt
+    raise RuntimeError(
+RuntimeError: 'cryptography' package is required for sha256_password or caching_sha2_password auth methods
+2022-12-09 21:22:02,422 - app - ERROR - Exception on / [GET]
+Traceback (most recent call last):
+  File "C:\Users\Chengyikang\PycharmProjects\world_cup_ticket\venv\lib\site-packages\sqlalchemy\engine\base.py", line 3361, in _wrap_pool_connect
+    return fn()
+  File "C:\Users\Chengyikang\PycharmProjects\world_cup_ticket\venv\lib\site-packages\sqlalchemy\pool\base.py", line 325, in connect
+    return _ConnectionFairy._checkout(self)
+  File "C:\Users\Chengyikang\PycharmProjects\world_cup_ticket\venv\lib\site-packages\sqlalchemy\pool\base.py", line 888, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "C:\Users\Chengyikang\PycharmProjects\world_cup_ticket\venv\lib\site-packages\sqlalchemy\pool\base.py", line 491, in checkout
+    rec = pool._do_get()
+  File "C:\Users\Chengyikang\PycharmProjects\world_cup_ticket\venv\lib\site-packages\sqlalchemy\pool\impl.py", line 146, in _do_get
+    self._dec_overflow()
+  File "C:\Users\Chengyikang\PycharmProjects\world_cup_ticket\venv\lib\site-packages\sqlalchemy\util\langhelpers.py", line 70, in __exit__
+    compat.raise_(
+  File "C:\Users\Chengyikang\PycharmProjects\world_cup_ticket\venv\lib\site-packages\sqlalchemy\util\compat.py", line 210, in raise_
+    raise exception
+  File "C:\Users\Chengyikang\PycharmProjects\world_cup_ticket\venv\lib\site-packages\sqlalchemy\pool\impl.py", line 143, in _do_get
+    return self._create_connection()
+  File "C:\Users\Chengyikang\PycharmProjects\world_cup_ticket\venv\lib\site-packages\sqlalchemy\pool\base.py", line 271, in _create_connection
+    return _ConnectionRecord(self)
+  File "C:\Users\Chengyikang\PycharmProjects\world_cup_ticket\venv\lib\site-packages\sqlalchemy\pool\base.py", line 386, in __init__
+    self.__connect()
+  File "C:\Users\Chengyikang\PycharmProjects\world_cup_ticket\venv\lib\site-packages\sqlalchemy\pool\base.py", line 685, in __connect
+    pool.logger.debug("Error on connect(): %s", e)
+  File "C:\Users\Chengyikang\PycharmProjects\world_cup_ticket\venv\lib\site-packages\sqlalchemy\util\langhelpers.py", line 70, in __exit__
+    compat.raise_(
+  File "C:\Users\Chengyikang\PycharmProjects\world_cup_ticket\venv\lib\site-packages\sqlalchemy\util\compat.py", line 210, in raise_
+    raise exception
+  File "C:\Users\Chengyikang\PycharmProjects\world_cup_ticket\venv\lib\site-packages\sqlalchemy\pool\base.py", line 680, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+  File "C:\Users\Chengyikang\PycharmProjects\world_cup_ticket\venv\lib\site-packages\sqlalchemy\engine\create.py", line 578, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "C:\Users\Chengyikang\PycharmProjects\world_cup_ticket\venv\lib\site-packages\sqlalchemy\engine\default.py", line 598, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "C:\Users\Chengyikang\PycharmProjects\world_cup_ticket\venv\lib\site-packages\pymysql\connections.py", line 353, in __init__
+    self.connect()
+  File "C:\Users\Chengyikang\PycharmProjects\world_cup_ticket\venv\lib\site-packages\pymysql\connections.py", line 633, in connect
+    self._request_authentication()
+  File "C:\Users\Chengyikang\PycharmProjects\world_cup_ticket\venv\lib\site-packages\pymysql\connections.py", line 932, in _request_authentication
+    auth_packet = _auth.caching_sha2_password_auth(self, auth_packet)
+  File "C:\Users\Chengyikang\PycharmProjects\world_cup_ticket\venv\lib\site-packages\pymysql\_auth.py", line 266, in caching_sha2_password_auth
+    pkt = _roundtrip(conn, data)
+  File "C:\Users\Chengyikang\PycharmProjects\world_cup_ticket\venv\lib\site-packages\pymysql\_auth.py", line 120, in _roundtrip
+    pkt = conn._read_packet()
+  File "C:\Users\Chengyikang\PycharmProjects\world_cup_ticket\venv\lib\site-packages\pymysql\connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "C:\Users\Chengyikang\PycharmProjects\world_cup_ticket\venv\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\Chengyikang\PycharmProjects\world_cup_ticket\venv\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1045, "Access denied for user 'Chengyikang'@'localhost' (using password: YES)")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Chengyikang\PycharmProjects\world_cup_ticket\venv\lib\site-packages\flask\app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Chengyikang\PycharmProjects\world_cup_ticket\venv\lib\site-packages\flask\app.py", line 1822, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Chengyikang\PycharmProjects\world_cup_ticket\venv\lib\site-packages\flask\app.py", line 1820, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Chengyikang\PycharmProjects\world_cup_ticket\venv\lib\site-packages\flask\app.py", line 1796, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "C:\Users\Chengyikang\PycharmProjects\world_cup_ticket\app\views.py", line 14, in index
+    return render_template('index.html', new_activities=new_activities)
+  File "C:\Users\Chengyikang\PycharmProjects\world_cup_ticket\venv\lib\site-packages\flask\templating.py", line 147, in render_template
+    return _render(app, template, context)
+  File "C:\Users\Chengyikang\PycharmProjects\world_cup_ticket\venv\lib\site-packages\flask\templating.py", line 130, in _render
+    rv = template.render(context)
+  File "C:\Users\Chengyikang\PycharmProjects\world_cup_ticket\venv\lib\site-packages\jinja2\environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "C:\Users\Chengyikang\PycharmProjects\world_cup_ticket\venv\lib\site-packages\jinja2\environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "C:\Users\Chengyikang\PycharmProjects\world_cup_ticket\app\templates\index.html", line 1, in top-level template code
+    {% extends 'base.html' %}
+  File "C:\Users\Chengyikang\PycharmProjects\world_cup_ticket\app\templates\base.html", line 53, in top-level template code
+    {% block content %}
+  File "C:\Users\Chengyikang\PycharmProjects\world_cup_ticket\app\templates\index.html", line 21, in block 'content'
+    {% block container %}
+  File "C:\Users\Chengyikang\PycharmProjects\world_cup_ticket\app\templates\index.html", line 36, in block 'container'
+    {% for activity in new_activities %}
+  File "C:\Users\Chengyikang\PycharmProjects\world_cup_ticket\venv\lib\site-packages\sqlalchemy\orm\query.py", line 2900, in __iter__
+    result = self._iter()
+  File "C:\Users\Chengyikang\PycharmProjects\world_cup_ticket\venv\lib\site-packages\sqlalchemy\orm\query.py", line 2915, in _iter
+    result = self.session.execute(
+  File "C:\Users\Chengyikang\PycharmProjects\world_cup_ticket\venv\lib\site-packages\sqlalchemy\orm\session.py", line 1713, in execute
+    conn = self._connection_for_bind(bind)
+  File "C:\Users\Chengyikang\PycharmProjects\world_cup_ticket\venv\lib\site-packages\sqlalchemy\orm\session.py", line 1552, in _connection_for_bind
+    return self._transaction._connection_for_bind(
+  File "C:\Users\Chengyikang\PycharmProjects\world_cup_ticket\venv\lib\site-packages\sqlalchemy\orm\session.py", line 747, in _connection_for_bind
+    conn = bind.connect()
+  File "C:\Users\Chengyikang\PycharmProjects\world_cup_ticket\venv\lib\site-packages\sqlalchemy\engine\base.py", line 3315, in connect
+    return self._connection_cls(self, close_with_result=close_with_result)
+  File "C:\Users\Chengyikang\PycharmProjects\world_cup_ticket\venv\lib\site-packages\sqlalchemy\engine\base.py", line 96, in __init__
+    else engine.raw_connection()
+  File "C:\Users\Chengyikang\PycharmProjects\world_cup_ticket\venv\lib\site-packages\sqlalchemy\engine\base.py", line 3394, in raw_connection
+    return self._wrap_pool_connect(self.pool.connect, _connection)
+  File "C:\Users\Chengyikang\PycharmProjects\world_cup_ticket\venv\lib\site-packages\sqlalchemy\engine\base.py", line 3364, in _wrap_pool_connect
+    Connection._handle_dbapi_exception_noconnection(
+  File "C:\Users\Chengyikang\PycharmProjects\world_cup_ticket\venv\lib\site-packages\sqlalchemy\engine\base.py", line 2198, in _handle_dbapi_exception_noconnection
+    util.raise_(
+  File "C:\Users\Chengyikang\PycharmProjects\world_cup_ticket\venv\lib\site-packages\sqlalchemy\util\compat.py", line 210, in raise_
+    raise exception
+  File "C:\Users\Chengyikang\PycharmProjects\world_cup_ticket\venv\lib\site-packages\sqlalchemy\engine\base.py", line 3361, in _wrap_pool_connect
+    return fn()
+  File "C:\Users\Chengyikang\PycharmProjects\world_cup_ticket\venv\lib\site-packages\sqlalchemy\pool\base.py", line 325, in connect
+    return _ConnectionFairy._checkout(self)
+  File "C:\Users\Chengyikang\PycharmProjects\world_cup_ticket\venv\lib\site-packages\sqlalchemy\pool\base.py", line 888, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "C:\Users\Chengyikang\PycharmProjects\world_cup_ticket\venv\lib\site-packages\sqlalchemy\pool\base.py", line 491, in checkout
+    rec = pool._do_get()
+  File "C:\Users\Chengyikang\PycharmProjects\world_cup_ticket\venv\lib\site-packages\sqlalchemy\pool\impl.py", line 146, in _do_get
+    self._dec_overflow()
+  File "C:\Users\Chengyikang\PycharmProjects\world_cup_ticket\venv\lib\site-packages\sqlalchemy\util\langhelpers.py", line 70, in __exit__
+    compat.raise_(
+  File "C:\Users\Chengyikang\PycharmProjects\world_cup_ticket\venv\lib\site-packages\sqlalchemy\util\compat.py", line 210, in raise_
+    raise exception
+  File "C:\Users\Chengyikang\PycharmProjects\world_cup_ticket\venv\lib\site-packages\sqlalchemy\pool\impl.py", line 143, in _do_get
+    return self._create_connection()
+  File "C:\Users\Chengyikang\PycharmProjects\world_cup_ticket\venv\lib\site-packages\sqlalchemy\pool\base.py", line 271, in _create_connection
+    return _ConnectionRecord(self)
+  File "C:\Users\Chengyikang\PycharmProjects\world_cup_ticket\venv\lib\site-packages\sqlalchemy\pool\base.py", line 386, in __init__
+    self.__connect()
+  File "C:\Users\Chengyikang\PycharmProjects\world_cup_ticket\venv\lib\site-packages\sqlalchemy\pool\base.py", line 685, in __connect
+    pool.logger.debug("Error on connect(): %s", e)
+  File "C:\Users\Chengyikang\PycharmProjects\world_cup_ticket\venv\lib\site-packages\sqlalchemy\util\langhelpers.py", line 70, in __exit__
+    compat.raise_(
+  File "C:\Users\Chengyikang\PycharmProjects\world_cup_ticket\venv\lib\site-packages\sqlalchemy\util\compat.py", line 210, in raise_
+    raise exception
+  File "C:\Users\Chengyikang\PycharmProjects\world_cup_ticket\venv\lib\site-packages\sqlalchemy\pool\base.py", line 680, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+  File "C:\Users\Chengyikang\PycharmProjects\world_cup_ticket\venv\lib\site-packages\sqlalchemy\engine\create.py", line 578, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "C:\Users\Chengyikang\PycharmProjects\world_cup_ticket\venv\lib\site-packages\sqlalchemy\engine\default.py", line 598, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "C:\Users\Chengyikang\PycharmProjects\world_cup_ticket\venv\lib\site-packages\pymysql\connections.py", line 353, in __init__
+    self.connect()
+  File "C:\Users\Chengyikang\PycharmProjects\world_cup_ticket\venv\lib\site-packages\pymysql\connections.py", line 633, in connect
+    self._request_authentication()
+  File "C:\Users\Chengyikang\PycharmProjects\world_cup_ticket\venv\lib\site-packages\pymysql\connections.py", line 932, in _request_authentication
+    auth_packet = _auth.caching_sha2_password_auth(self, auth_packet)
+  File "C:\Users\Chengyikang\PycharmProjects\world_cup_ticket\venv\lib\site-packages\pymysql\_auth.py", line 266, in caching_sha2_password_auth
+    pkt = _roundtrip(conn, data)
+  File "C:\Users\Chengyikang\PycharmProjects\world_cup_ticket\venv\lib\site-packages\pymysql\_auth.py", line 120, in _roundtrip
+    pkt = conn._read_packet()
+  File "C:\Users\Chengyikang\PycharmProjects\world_cup_ticket\venv\lib\site-packages\pymysql\connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "C:\Users\Chengyikang\PycharmProjects\world_cup_ticket\venv\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\Chengyikang\PycharmProjects\world_cup_ticket\venv\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+sqlalchemy.exc.OperationalError: (pymysql.err.OperationalError) (1045, "Access denied for user 'Chengyikang'@'localhost' (using password: YES)")
+(Background on this error at: https://sqlalche.me/e/14/e3q8)
+2022-12-09 21:25:01,970 - werkzeug - WARNING -  * Debugger is active!
+2022-12-09 21:25:57,245 - werkzeug - WARNING -  * Debugger is active!
+2022-12-09 21:26:11,190 - werkzeug - WARNING -  * Debugger is active!
+2022-12-09 21:26:30,295 - werkzeug - WARNING -  * Debugger is active!
+2022-12-09 21:27:00,024 - werkzeug - WARNING -  * Debugger is active!
+2022-12-09 21:27:53,161 - werkzeug - WARNING -  * Debugger is active!
+2022-12-09 21:28:04,128 - werkzeug - WARNING -  * Debugger is active!
+2022-12-09 21:30:20,947 - werkzeug - WARNING -  * Debugger is active!
+2022-12-09 21:33:39,595 - werkzeug - WARNING -  * Debugger is active!
+2022-12-09 21:34:47,858 - werkzeug - WARNING -  * Debugger is active!
+2022-12-09 21:38:51,014 - werkzeug - WARNING -  * Debugger is active!
+2022-12-09 21:45:06,145 - werkzeug - WARNING -  * Debugger is active!
+2022-12-09 22:26:51,648 - werkzeug - WARNING -  * Debugger is active!
+2022-12-09 22:49:02,619 - werkzeug - WARNING -  * Debugger is active!
+2022-12-09 22:57:55,690 - werkzeug - WARNING -  * Debugger is active!
+2022-12-09 23:14:59,720 - werkzeug - WARNING -  * Debugger is active!
+2022-12-09 23:17:59,241 - werkzeug - WARNING -  * Debugger is active!
+2022-12-09 23:40:37,296 - werkzeug - WARNING -  * Debugger is active!
+2022-12-09 23:44:15,356 - werkzeug - WARNING -  * Debugger is active!
+2022-12-09 23:46:46,886 - werkzeug - WARNING -  * Debugger is active!
+2022-12-09 23:47:36,906 - werkzeug - WARNING -  * Debugger is active!
+2022-12-09 23:49:18,462 - werkzeug - WARNING -  * Debugger is active!
+2022-12-09 23:52:39,591 - werkzeug - WARNING -  * Debugger is active!
+2022-12-10 08:47:44,165 - werkzeug - WARNING -  * Debugger is active!
+2022-12-10 09:02:45,121 - werkzeug - WARNING -  * Debugger is active!
+2022-12-10 09:03:35,071 - werkzeug - WARNING -  * Debugger is active!
+2022-12-10 09:05:09,203 - werkzeug - WARNING -  * Debugger is active!
+2022-12-10 09:06:37,397 - werkzeug - WARNING -  * Debugger is active!
+2022-12-10 09:10:53,286 - werkzeug - WARNING -  * Debugger is active!
+2022-12-10 10:08:27,700 - werkzeug - WARNING -  * Debugger is active!
+2022-12-10 10:14:03,017 - werkzeug - WARNING -  * Debugger is active!
+2022-12-10 10:26:48,339 - werkzeug - WARNING -  * Debugger is active!
+2022-12-10 12:56:25,152 - werkzeug - WARNING -  * Debugger is active!
+2022-12-10 16:10:58,498 - werkzeug - WARNING -  * Debugger is active!
+2022-12-11 09:22:18,977 - werkzeug - WARNING -  * Debugger is active!
+2022-12-13 15:56:03,544 - werkzeug - WARNING -  * Debugger is active!
+2022-12-13 15:57:26,930 - werkzeug - WARNING -  * Debugger is active!
+2022-12-13 16:13:21,299 - werkzeug - WARNING -  * Debugger is active!
+2022-12-13 16:14:05,435 - werkzeug - WARNING -  * Debugger is active!
+2022-12-13 16:17:33,395 - werkzeug - WARNING -  * Debugger is active!
+2022-12-13 16:17:48,158 - flask_migrate - ERROR - Error: Directory migrations already exists and is not empty
+2022-12-13 16:20:18,886 - werkzeug - WARNING -  * Debugger is active!
+2022-12-13 17:04:56,737 - werkzeug - WARNING -  * Debugger is active!
+2022-12-17 10:42:19,122 - werkzeug - WARNING -  * Debugger is active!
+2022-12-17 11:20:36,055 - werkzeug - WARNING -  * Debugger is active!
+2022-12-23 07:42:03,493 - werkzeug - WARNING -  * Debugger is active!
+2022-12-23 07:47:17,964 - werkzeug - WARNING -  * Debugger is active!
+2022-12-23 07:55:42,051 - werkzeug - WARNING -  * Debugger is active!
+2022-12-23 08:04:18,426 - werkzeug - WARNING -  * Debugger is active!
+2022-12-23 08:18:16,936 - werkzeug - WARNING -  * Debugger is active!
+2022-12-23 08:19:00,756 - werkzeug - WARNING -  * Debugger is active!
+2022-12-23 08:26:38,176 - werkzeug - WARNING -  * Debugger is active!
+2022-12-23 08:46:47,147 - werkzeug - WARNING -  * Debugger is active!
+2022-12-25 00:31:16,525 - werkzeug - WARNING -  * Debugger is active!
+2022-12-25 00:42:37,687 - werkzeug - WARNING -  * Debugger is active!
+2022-12-25 01:58:24,238 - werkzeug - WARNING -  * Debugger is active!
+2022-12-25 01:59:22,475 - werkzeug - WARNING -  * Debugger is active!
+2022-12-25 02:06:37,942 - werkzeug - WARNING -  * Debugger is active!
+2022-12-25 02:10:03,116 - werkzeug - WARNING -  * Debugger is active!
+2022-12-25 02:22:21,042 - werkzeug - WARNING -  * Debugger is active!
+2022-12-25 02:27:18,270 - werkzeug - WARNING -  * Debugger is active!
+2022-12-25 02:27:54,038 - werkzeug - WARNING -  * Debugger is active!
+2022-12-25 02:31:53,132 - werkzeug - WARNING -  * Debugger is active!
+2022-12-25 02:32:26,212 - werkzeug - WARNING -  * Debugger is active!
+2022-12-25 02:43:19,679 - werkzeug - WARNING -  * Debugger is active!
+2022-12-25 02:44:24,344 - werkzeug - WARNING -  * Debugger is active!
+2022-12-25 02:44:41,527 - werkzeug - WARNING -  * Debugger is active!
+2022-12-25 02:55:12,580 - werkzeug - WARNING -  * Debugger is active!
+2022-12-25 03:00:00,936 - werkzeug - WARNING -  * Debugger is active!
+2022-12-25 03:01:10,153 - werkzeug - WARNING -  * Debugger is active!
+2022-12-25 03:01:25,150 - werkzeug - WARNING -  * Debugger is active!
+2022-12-25 03:01:38,977 - werkzeug - WARNING -  * Debugger is active!

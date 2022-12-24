@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+
+{% block title %}All Games{% endblock %}
+{% block container %}
+    <div class="row">
+
+        <!-- SIDEBAR BEGINS -->
+        <div class="col-md-3">
+            <div id="secondary" class="widget-area" role="complementary">
+                <aside id="search-3" class="widget widget_search">
+                    <h1 class="widget-title section-title"><span>Search</span></h1>
+                    <form role="search" method="get" class="search-form" action="#">
+                        <input type="search" class="search-field" placeholder="Type and hit enter..." value="" name="s"
+                               title=""/>
+                    </form>
+                </aside>
+                <aside id="recent-posts-3" class="widget widget_recent_entries">
+                    <h1 class="widget-title section-title"><span>Latest Posts</span></h1>
+                    <ul>
+                        {% for activity in old_activities %}
+                            <li>
+                                <a href="{{ url_for('detail',id=activity.id) }}">{{ activity.activity_name }}</a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </aside>
+            </div>
+        </div>
+        <!-- SIDEBAR ENDS -->
+        <!-- MAIN CONTENT BEGINS -->
+        <div class="col-md-9">
+            <div id="primary" class="content-area">
+                <main id="main" class="site-main" role="main">
+                    <div class="wowitemboxlist">
+                        {% for activity in new_activities %}
+                            <div class="wowitembox">
+                                <div class="wowitemboxinner">
+                                    <div class="imagearea">
+                                        <img width="555" height="370"
+                                             src="static/img/qatar.png"
+                                             class="attachment-post-thumbnail wp-post-image" alt="比赛图片"/>
+                                        <div class="caption">
+                                            <div class="blur">
+                                            </div>
+                                            <div class="caption-text">
+                                                <div class="captionbuttons">
+                                                    <a href="{{ url_for('detail',id=activity.id) }}" class="captiondetails"><i class="fa fa-link"></i>
+                                                        Detail...</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="notesarea">
+                                        <a href="{{ url_for('detail',id=activity.id) }}">
+                                            <h2>{{ activity.activity_name }}</h2>
+                                        </a>
+                                        <div class="description">
+                                            <p>
+                                                <span class="description">Time：{{ activity.time }}</span>
+                                            </p>
+                                        </div>
+                                        <div class="notesbottom">
+                                            <div class="price fleft">
+                                                Price:£{{ activity.price }}
+                                            </div>
+                                            <div class="cart fright">
+                                                <a href="{{ url_for('detail',id=activity.id) }}" class="edd-add-to-cart">
+                                                    <span class="edd-add-to-cart-label">Buy</span>
+                                                </a>
+                                            </div>
+                                            <div class="clearfix">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- .wowitemboxinner-->
+                            </div>
+                        {% endfor %}
+                        <!-- .wowitembox-->
+                    </div>
+                </main>
+            </div>
+        </div>
+        <!-- MAIN CONTENT ENDS -->
+
+
+    </div>
+{% endblock %}

@@ -1,0 +1,47 @@
+{% extends 'admin_base.html' %}
+{% block content %}
+    <div class="page-header">
+        <h1>Game Information</h1>
+        <a href="{{ url_for('activity_add') }}" class="btn btn-success">Add Game</a>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table" >
+                <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Game</th>
+                    <th>Information</th>
+                    <th>Price</th>
+                    <th>Number of Ticket</th>
+                    <th>Sold</th>
+                    <th>Time</th>
+                    <th>Time to Buy Tickets</th>
+                    <th>More</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for activity in activities %}
+                    <tr>
+                        <td>{{ loop.index }}</td>
+                        <td>{{ activity.activity_name }}</td>
+                        <td width="25%">{{ activity.activity_info }}</td>
+                        <td>{{ activity.price }}</td>
+                        <td>{{ activity.limit }}</td>
+                        <td>{{ activity.applied }}</td>
+                        <td>{{ activity.time }}</td>
+                        <td>{{ activity.deadline }}</td>
+                        <td>
+                            <a href="{{ url_for('activity_edit', id=activity.id) }}" class="btn btn-default btn-xs" title="编辑">Edit</a>
+                            <a href="{{ url_for('activity_delete', id=activity.id) }}" class="btn btn-default btn-xs" title="删除">Delete</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+{% endblock %}
+

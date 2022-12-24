@@ -1,0 +1,40 @@
+{% extends 'admin_base.html' %}
+{% block content %}
+    <hr>
+    <div class="page-header">
+        <h1>Purchase Record</h1>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Account</th>
+                    <th>Name</th>
+                    <th>Game</th>
+                    <th>Number</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for activities in activities_list %}
+                    {% for key,value in activities.items() %}
+                        {% for activity in value %}
+                            <tr>
+                                <td>{{ loop.index }}</td>
+                                <td>{{ key.username }}</td>
+                                <td>{{ key.name }}</td>
+                                <td>{{ activity.activity_name }}</td>
+                                <td>{{ 1 }}</td>
+                            </tr>
+                        {% endfor %}
+                    {% endfor %}
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+{% endblock %}
+

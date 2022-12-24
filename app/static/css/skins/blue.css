@@ -1,0 +1,27 @@
+.edd_download_inner input[type="radio"]:checked {
+	border: 6px solid #25c5ed;
+}
+
+.edd_downloads_list #edd_download_pagination .page-numbers.current, .edd_downloads_list #edd_download_pagination .page-numbers:hover{
+	color:#25c5ed;border:#25c5ed 1px solid;
+}
+
+a, a:hover,.navbar-default .navbar-nav>.active>a,.navbar-default .navbar-nav>.active>a:hover,.navbar-default .navbar-nav>.active>a:focus,.dropdown-menu>li>a:focus,.dropdown-menu>li>a:hover,.dropdown-menu>.active>a,.dropdown-menu>.active>a:focus,.dropdown-menu>.active>a:hover,.wowitemboxinner .edd-submit.button:hover,.pagination a.inactive:hover,#sidemenu li a:hover,#sidemenu li a.open,.post-content .wowmetaposts span a:hover,ul.edd-taxonomy-widget li a:hover,.color{
+	color:#25c5ed;
+}
+
+input[type=submit]:hover,.navbar-default .navbar-toggle:hover,.navbar-default .navbar-toggle:focus,#edd_checkout_form_wrap input[type="submit"].edd-submit,.pagination .current,.wowsortitems:before,.templatemyaccount .shoppingcartarea .edd_checkout a:hover,.contentdownloadphp .edd-add-to-cart.button.edd-submit,.contentdownloadphp .edd_go_to_checkout.button.edd-submit,.notfoundbadge:hover,.excerpttext .readmore,.widget_edd_product_details .edd_purchase_submit_wrapper a.edd-add-to-cart.edd-has-js,.widget_edd_product_details .edd_purchase_submit_wrapper a.edd-add-to-cart.edd-no-js ,.widget_edd_product_details .edd-add-to-cart.edd-submit,footer .widget_wysija_cont .wysija-submit,.actionbeforefooter {
+	background-color:#25c5ed;
+}
+
+.navbar-nav>li>.dropdown-menu, .navbar-nav li.menu-item-has-children ul.sub-menu  {
+	border-top:3px solid #25c5ed;
+}
+
+li.checkoutmenu {	
+	border:#25c5ed 1px solid;
+}
+
+footer.themefooter h3.widget-title:after{	
+	border-top-color:#25c5ed;
+}

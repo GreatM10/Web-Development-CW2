@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="shortcut icon" href="/static/img/Ficon.ico"/>
+    <title>Games</title>
+    <link href='http://fonts.googleapis.com/css?family=Raleway:400,300,500,600,700,800,900' rel='stylesheet'
+          type='text/css'>
+    <link rel='stylesheet' href='/static/css/edd.css' type='text/css' media='all'/>
+    <link rel='stylesheet' href='/static/css/bootstrap.min.css' type='text/css' media='all'/>
+    <link rel='stylesheet' href='/static/css/style.css' type='text/css' media='all'/>
+    <link rel='stylesheet' href='/static/css/font-awesome.css' type='text/css' media='all'/>
+    <link href="/static/css/skins/blue.css" rel="stylesheet">
+    {% block css_ext %}{% endblock %}
+</head>
+<body>
+<div class="boxedlayout">
+    <!-- HEADER
+    ================================================== -->
+    <nav id="wow-menu" class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                        data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="{{ url_for('index') }}">
+                    <img alt="FIFA" src="/static/img/logo.png"/>
+                </a>
+            </div>
+            <!-- Menu -->
+            <div id="bs-example-navbar-collapse-1" class="collapse navbar-collapse">
+                <ul id="menu-top" class="nav navbar-nav navbar-right">
+                    <li class="active"><a href="{{ url_for('index') }}">Home</a></li>
+                    <li><a href="{{ url_for('all_games') }}">All Game</a></li>
+                    {% if current_user.is_authenticated %}
+                        <li><a href="{{ url_for('applied') }}">My Ticket</a></li>
+                        <li><a href="{{ url_for('change_info') }}">My Information</a></li>
+                        <li><a href="{{ url_for('logout') }}">Logout</a></li>
+                    {% else %}
+                        <li><a href="{{ url_for('login') }}">Login</a></li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    {% block content %}
+        <!-- PAGE CONTENT
+        ================================================== -->
+        <div class="templateblog">
+
+            <!-- TITLE BEGINS -->
+            <div class="headerimage" style="background-color: black">
+                <div class="headercontent">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="fleft">
+                                    <h1>{% block title %}{% endblock %}</h1>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    {% for msg in messages %}
+                        <div class="alert alert-warning">
+                            <a href="#" class="close" data-dismiss="alert">&times;</a>
+                            {{ msg }}
+                        </div>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+            <!-- TITLE ENDS -->
+
+            <div class="container padtop50 padbot40">
+                {% block container %}{% endblock %}
+            </div>
+        </div>
+    {% endblock %}
+    <!-- CALL TO ACTION
+    ================================================== -->
+    <div class="actionbeforefooter text-center">
+        <div class="container">
+            <span><i class="fa fa-star fa-spin"></i>Buy tickets from us!</span>
+            <a target="_blank" class="actionbutton" href="{{ url_for('all_games') }}">Buy Now </a>
+        </div>
+    </div>
+
+    <!-- FOOTER
+    ================================================== -->
+    <footer class="themefooter section">
+        <!-- /copyright -->
+        <div class="sectioncredits">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <ul class="footermenu fright">
+                            <li><a href="{{ url_for('admin_login') }}">Admin</a></li>
+                        </ul>
+                    </div>
+                    <div class="clear">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- SCRIPTS
+    ================================================== -->
+    <script type='text/javascript' src='/static/js/jquery.min.js'></script>
+    <script type='text/javascript' src='/static/js/bootstrap.min.js'></script>
+    <script type='text/javascript' src='/static/js/masonry.js'></script>
+    <script type='text/javascript' src='/static/js/imagesloaded.js'></script>
+    <script type='text/javascript' src='/static/js/SmoothScroll.js'></script>
+    <script type='text/javascript' src='/static/js/init.js'></script>
+    <script type='text/javascript' src='/static/js/anim.js'></script>
+    {% block js_ext %}{% endblock %}
+</div>
+</body>
+</html>

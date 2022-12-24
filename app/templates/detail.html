@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+
+{% block title %}Game Detail{% endblock %}
+{% block container %}
+    <div class="row">
+
+        <!-- MAIN CONTENT BEGINS -->
+        <div class="col-md-12">
+            <div id="primary" class="content-area">
+                <main id="main" class="site-main" role="main">
+                    <article class="contentdownloadphp">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <span class="entryitemname"><b>Game: </b>{{ activity.activity_name }}<br/></span>
+                                <span class="entryprice"><b>Price:</b>£ {{ activity.price }}<br/></span>
+                                <span class="entrysku"><b>Number of Ticket: </b> {{ activity.limit }}<br/></span>
+                                <span class="entrysku"><b>Sold: </b> {{ activity.applied }}<br/></span>
+                                <span class="entrysku"><b>Time: </b> {{ activity.time }}<br/></span>
+                                <span class="entrysku"><b>Time to Buy Tickets: </b> {{ activity.deadline }}<br/></span>
+                                <div class="edd_purchase_submit_wrapper">
+                                    <button onclick="apply({{ activity.id }})"
+                                            class="edd-add-to-cart button edd-submit"><span
+                                            class="edd-add-to-cart-label white">Buy</span></button>
+                                </div>
+                            </div>
+                            <div class="col-md-9">
+                                <p>{{ activity.activity_info }}</p>
+                                <p>Location：{{ activity.location }}</p>
+                                <button type="button" onclick="drivingRoute({{ activity.lon }},{{ activity.lat }})">Click to Navigate</button>
+                                <div id="mapContainer" style="min-width:500px;min-height:300px;"></div>
+                            </div>
+                        </div>
+                    </article>
+                </main>
+            </div>
+        </div>
+        <!-- MAIN CONTENT ENDS -->
+
+    </div>
+{% endblock %}
+{% block js_ext %}
+    <script>
+        function apply(id) {
+            console.log(id);
+            $.ajax({
+                url: '{{ url_for('apply') }}',
+                type: 'POST',
+                data: JSON.stringify(id),
+                contentType: "application/json; charset=UTF-8",
+                success: function (data) {
+                    console.log(data);
+                    alert(data.message);
+                },
+                error: function (data) {
+                    alert('购买失败！')
+                }
+            })
+        }
+    </script>
+    <script type="text/javascript"
+            src="https://api.map.baidu.com/api?v=3.0&ak=G1rIFPakwwyeKe1HYlEHnTn6RZDiiL8i&callback=initialize"></script>
+    <script type="text/javascript" src="/static/js/map.js"></script>
+{% endblock %}

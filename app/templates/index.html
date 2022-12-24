@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+{% block content %}
+    <!-- TITLE BEGINS -->
+
+    <div class="headerimage homeimg text-center" style="background-image: url(/static/img/stadium.png);">
+        <div class="headercontent home">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1 data-scrollreveal="enter top over 1.9s after 0.2s">Tickets For Football</h1>
+                        <p class="lead" data-scrollreveal="enter bottom over 1.9s after 0.4s">
+                            Enjoy Your Game!
+                        </p>
+                        <a data-scrollreveal="enter bottom over 1.0s after 1.6s" href="{{ url_for('all_games') }}"
+                           class="homeimgbtn">Get it now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% block container %}
+        <!-- TITLE ENDS -->
+        <!-- MAIN CONTENT BEGINS -->
+        <div id="homepagetemplate" class="container padtop10 padbot40">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="clear text-center sectionlatestitems">
+                        <h2 class="maintitle">Recent Game</h2>
+                        <div class="separatr">
+							<span>
+							<i class="fa fa-reorder"></i>
+							</span>
+                        </div>
+                    </div>
+                    <div class="wowitemboxlist sectionlatestitems clear">
+                        {% for activity in new_activities %}
+                        <div class="wowitembox">
+                            <div class="wowitemboxinner">
+                                <div class="imagearea">
+                                    <img width="555" height="370" src="static/img/qatar.png"
+                                         class="attachment-post-thumbnail wp-post-image" alt="163_1"/>
+                                    <div class="caption">
+                                        <div class="blur">
+                                        </div>
+                                        <div class="caption-text">
+                                            <div class="captionbuttons">
+                                                <a href="{{ url_for('detail',id=activity.id) }}" class="captiondetails"><i
+                                                        class="fa fa-link"></i>Detail</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="notesarea">
+                                    <a href="{{ url_for('detail',id=activity.id) }}">
+                                        <h2>{{ activity.activity_name }}</h2>
+                                    </a>
+                                    <div class="description">
+                                        <p>
+                                            <span class="description">Time：{{ activity.time }}</span>
+                                        </p>
+                                    </div>
+                                    <div class="notesbottom">
+                                        <div class="price fleft">
+                                            Price:£{{ activity.price }}
+                                        </div>
+                                        <div class="cart fright">
+                                            <a href="{{ url_for('detail',id=activity.id) }}" class="edd-add-to-cart">
+                                                <span class="edd-add-to-cart-label">Buy</span>
+                                            </a>
+                                        </div>
+                                        <div class="clearfix">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- MAIN CONTENT ENDS -->
+    {% endblock %}
+{% endblock %}
