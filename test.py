@@ -40,8 +40,8 @@ class AppTestCase(unittest.TestCase):
     def test_index_page(self):
         response = self.client.get('/')
         data = response.get_data(as_text=True)
-        self.assertIn('近期比赛', data)
-        self.assertIn('登录', data)
+        self.assertIn('Recent Game', data)
+        self.assertIn('Login', data)
         self.assertEqual(response.status_code, 200)
 
     def login(self):
@@ -56,65 +56,65 @@ class AppTestCase(unittest.TestCase):
             password='test_admin',
         ), follow_redirects=True)
 
-    # 测试登录保护
+    # Login protection test
     def test_login_protect(self):
         response = self.client.get('/detail/1')
         data = response.get_data(as_text=True)
-        self.assertNotIn('退出登录', data)
+        self.assertNotIn('Logout', data)
 
-    # 测试登录
+    # Login test
     def test_login(self):
         response = self.client.post('/login', data=dict(
             username='test_user',
             password='test_user'
         ), follow_redirects=True)
         data = response.get_data(as_text=True)
-        self.assertIn('退出登录', data)
-        self.assertIn('个人信息', data)
+        self.assertIn('Logout', data)
+        self.assertIn('My Information', data)
 
-        # 测试使用错误的密码登录
+        # Login with wrong password
         response = self.client.post('/login', data=dict(
             username='test',
             password='456'
         ), follow_redirects=True)
         data = response.get_data(as_text=True)
-        self.assertNotIn('登录成功', data)
+        self.assertNotIn('Login Success', data)
         self.assertIn('Wrong username or password!', data)
 
-        # 测试使用错误的用户名登录
+        # Login with wrong username
         response = self.client.post('/login', data=dict(
             username='wrong',
             password='123'
         ), follow_redirects=True)
         data = response.get_data(as_text=True)
-        self.assertNotIn('登录成功', data)
+        self.assertNotIn('Login Success', data)
         self.assertIn('Wrong username or password!', data)
 
-        # 测试使用空用户名登录
+        # Login with empty username
         response = self.client.post('/login', data=dict(
             username='',
             password='123'
         ), follow_redirects=True)
         data = response.get_data(as_text=True)
-        self.assertNotIn('登录成功', data)
+        self.assertNotIn('Login Success', data)
         self.assertIn('Wrong Input!', data)
 
-        # 测试使用空密码登录
+        # Login with empty password
         response = self.client.post('/login', data=dict(
             username='test',
             password=''
         ), follow_redirects=True)
         data = response.get_data(as_text=True)
-        self.assertNotIn('登录成功', data)
+        self.assertNotIn('Login Success', data)
         self.assertIn('Wrong Input!', data)
 
-    # 测试登出
+    # Logout test
     def test_logout(self):
         self.login()
 
         response = self.client.get('/logout', follow_redirects=True)
         data = response.get_data(as_text=True)
-        self.assertNotIn('退出登录', data)
+        self.assertNotIn('Logout', data)
 
 
 if __name__ == "__main__":
